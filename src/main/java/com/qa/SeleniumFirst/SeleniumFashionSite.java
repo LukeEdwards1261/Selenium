@@ -17,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FashionSite {
+public class SeleniumFashionSite {
 
     private WebDriver driver;
     
@@ -40,7 +40,7 @@ public class FashionSite {
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Luke Edwards\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\com.qa.SeleniumFirst\\src\\test\\resources\\chromedriver.exe");
-//        driver = new ChromeDriver(chromeCfg());
+//        driver = new ChromeDriver(chromeCfg());     //add this line instead of the one below if using google to stop its popups, otherwise use normal as this can block needed popups
         driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1366, 1168));
         
