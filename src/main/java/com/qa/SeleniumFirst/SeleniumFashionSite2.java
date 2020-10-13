@@ -39,7 +39,7 @@ public class SeleniumFashionSite2 {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Luke Edwards\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\com.qa.SeleniumFirst\\src\\test\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Luke Edwards\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\com.qa.SeleniumFirst\\src\\main\\resources\\chromedriver.exe");
 //        driver = new ChromeDriver(chromeCfg());     //add this line instead of the one below if using google to stop its popups, otherwise use normal as this can block needed popups
         driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1366, 1168));
@@ -67,7 +67,8 @@ public class SeleniumFashionSite2 {
         Thread.sleep(5000);
 
         
-        assertEquals("kittens - Google Search", driver.getTitle());
+        String test = driver.findElement(By.xpath("//*[@id=\"product_1_1_0_0\"]/td[2]/p/a")).getText();
+        assertEquals("Faded Short Sleeve T-shirts", test);
        
     }
     
